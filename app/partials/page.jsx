@@ -2,6 +2,10 @@ import BarChart from "@/components/BarChart";
 import PieChart from "@/components/PieChart";
 
 const Charts = ({ stock_quantity, trade_brokers }) => {
+
+  if (!stock_quantity || !trade_brokers) {
+    return <div>No data...</div>
+  }
   
   const separete_trade_broker = Object.values(trade_brokers);
   const names = separete_trade_broker.map((v) => v.name)
